@@ -1,0 +1,333 @@
+[
+    {
+        "nome": "Gênesis",
+        "url": "acf-gn.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Êxodo",
+        "url": "acf-ex.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Levítico",
+        "url": "acf-lv.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Números",
+        "url": "acf-nm.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Deuteronômio",
+        "url": "acf-dt.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Josué",
+        "url": "acf-js.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Juízes",
+        "url": "acf-jz.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Rute",
+        "url": "acf-rt.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "1 Samuel",
+        "url": "acf-1sm.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "2 Samuel",
+        "url": "acf-2sm.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "1 Reis",
+        "url": "acf-1rs.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "2 Reis",
+        "url": "acf-2rs.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "1 Crônicas",
+        "url": "acf-1cr.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "2 Crônicas",
+        "url": "acf-2cr.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Esdras",
+        "url": "acf-ed.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Neemias",
+        "url": "acf-ne.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Ester",
+        "url": "acf-et.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Jó",
+        "url": "acf-job.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Salmos",
+        "url": "acf-sl.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Provérbios",
+        "url": "acf-pv.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Eclesiastes",
+        "url": "acf-ec.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Cânticos",
+        "url": "acf-ct.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Isaías",
+        "url": "acf-is.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Jeremias",
+        "url": "acf-jr.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Lamentações",
+        "url": "acf-lm.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Ezequiel",
+        "url": "acf-ez.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Daniel",
+        "url": "acf-dn.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Oseias",
+        "url": "acf-os.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Joel",
+        "url": "acf-jl.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Amós",
+        "url": "acf-am.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Obadias",
+        "url": "acf-ob.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Jonas",
+        "url": "acf-jn.xml" ,
+        "testamento": "Antigo"       
+    },
+    {
+        "nome": "Miqueias",
+        "url": "acf-mq.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Naum",
+        "url": "acf-na.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Habacuque",
+        "url": "acf-hc.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Sofonias",
+        "url": "acf-sf.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Ageu",
+        "url": "acf-ag.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Zacarias",
+        "url": "acf-zc.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Malaquias",
+        "url": "acf-ml.xml",
+        "testamento": "Antigo"
+    },
+    {
+        "nome": "Mateus",
+        "url": "acf-mt.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Marcos",
+        "url": "acf-mc.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Lucas",
+        "url": "acf-lc.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "João",
+        "url": "acf-jo.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Atos dos Apóstolos",
+        "url": "acf-at.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Romanos",
+        "url": "acf-rm.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "1 Coríntios",
+        "url": "acf-1co.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "2 Coríntios",
+        "url": "acf-2co.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Gálatas",
+        "url": "acf-gl.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Efésios",
+        "url": "acf-ef.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Filipenses",
+        "url": "acf-fp.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Colossenses",
+        "url": "acf-cl.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "1 Tessalonicenses",
+        "url": "acf-1ts.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "2 Tessalonicenses",
+        "url": "acf-2ts.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "1 Timóteo",
+        "url": "acf-1tm.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "2 Timóteo",
+        "url": "acf-2tm.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Tito",
+        "url": "acf-tt.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Filemon",
+        "url": "acf-fm.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Hebreus",
+        "url": "acf-hb.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Tiago",
+        "url": "acf-tg.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "1 Pedro",
+        "url": "acf-1pe.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "2 Pedro",
+        "url": "acf-2pe.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "1 João",
+        "url": "acf-1jo.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "2 João",
+        "url": "acf-2jo.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "3 João",
+        "url": "acf-3jo.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Judas",
+        "url": "acf-jd.xml",
+        "testamento": "Novo"
+    },
+    {
+        "nome": "Apocalipse",
+        "url": "acf-ap.xml",
+        "testamento": "Novo"
+    }
+]
+

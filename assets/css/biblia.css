@@ -1,0 +1,191 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0px; 
+  padding: 0px;
+  background-color: white;
+}
+
+.divisor {height: 20px; }
+
+.sidebar.semmenu {
+  display: none;
+}
+
+.mainIUper.roww {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100%;
+  height: auto;
+}
+
+.sidebar {
+  width: 350px;
+  height: 100%;
+  position: relative;
+  color: black;
+  padding: 10px;
+}
+
+.sidebar .container.menu > p {
+  font-weight: bolder;
+}
+
+.sidebar .menu {
+  height: 100%;
+  width: 100%;
+  /* background-color: rgb(214, 210, 210); */
+  background-color: white;
+  padding-top: 10%;
+}
+
+.sidebar .container.menu .row{width: 100%;}
+
+.sidebar .container.menu .row .btnTestamento {
+  background-color: white;
+  width: 48%;
+  height: auto;
+}
+
+.sidebar .container.menu .row .btnTestamento:hover {
+  background-color: rgb(230, 200, 200);
+}
+
+.sidebar .container.menu .row .btnTestamento.active {
+  background-color: rgb(192, 0, 0);
+  color: white;
+}
+
+.sidebar .container.menu .list-group.listaAntigoTestamento.no {
+  display: none;
+}
+
+.sidebar .container.menu .list-group.listaAntigoTestamento.si {
+  display: block;
+}
+
+.sidebar .container.menu .list-group.listaNovoTestamento.no {
+  display: none;
+}
+
+.sidebar .container.menu .list-group.listaNovoTestamento.si {
+  display: block;
+}
+
+.sidebar .container.menu .list-group > li {
+  background-color: transparent !important;
+  padding-left: 0%;
+  cursor: pointer;
+  text-align: center;
+}
+
+.sidebar .container.menu .list-group .active {
+  background-color: rgb(192, 0, 0) !important;
+
+}
+.sidebar .container.menu .list-group > li:hover {
+  background-color: white !important;
+  color: black;
+}
+
+.sidebar .container.menu .tabela .row .divCapituloNumero {
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 0%;
+  margin-top: 10%;
+  width: auto !important;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sidebar .container.menu .tabela .row .divCapituloNumero:hover {
+  background-color: white;
+}
+
+.sidebar .container.menu .tabela .row .divCapituloNumero.active {
+  background-color: rgb(192, 0, 0);
+  color: white;
+}
+
+.sidebar .container.menu .tabela .row .divCapituloNumero > p {
+  margin: 0%;
+  padding: 0%;
+  width: auto !important;
+}
+
+.sidebar .container.menu .tabela .row .divVersiculo {
+  border-radius: 5px;
+  border: 1px solid;
+  padding: 0%;
+  margin: 0%;
+  width: auto !important;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sidebar .container.menu .tabela .row .divVersiculo:hover {
+  background-color: white;
+}
+
+.sidebar .container.menu .tabela .row .divVersiculo.active {
+  background-color: rgb(192, 0, 0);
+  color: white;
+}
+
+.sidebar .container.menu .tabela .row .divVersiculo > p {
+ margin: 0%;
+  padding: 0%;
+  width: auto !important;
+}
+
+.main.commenu {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.main .recuamenu .row .coluna > i {
+  color: black;
+  font-size: 3vmax;
+  cursor: pointer;
+}
+
+.main .recuamenu .row .coluna > i:hover {
+  color: rgb(192, 0, 0);
+  font-size: 3vmax;
+  cursor: pointer;
+}
+
+.main.semmenu {
+  width: 100%;
+}
+
+.main .bodyMain {
+  height: 100%;
+  width: 100%;
+}
+
+.main .bodyMain > h1 {
+  font-weight: bolder;
+}
+
+.main .bodyMain .versiculos > p {
+  font-size: 2vw;
+}
+
+.main .bodyMain .controladores {margin-bottom: 10%; margin-top: 5%;}
+
+.main .bodyMain .controladores .row .coluna .btn {
+  background-color: rgb(230, 200, 200) !important;
+  width: 50%;
+}
+
+.main .bodyMain .controladores .row .coluna .btn:hover {
+  background-color: rgb(170, 143, 143);
+
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+}
