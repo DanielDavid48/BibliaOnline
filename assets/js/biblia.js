@@ -1,12 +1,19 @@
-/* $('#main-recent-filter').toggle();
-$('#main-recent-filter').draggable(); */
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+$(document).ready(function () {
+  localStorage.setItem('Livro', 'Gênesis');
+  localStorage.setItem('Capítulo', '1');
+  localStorage.setItem('Versículo', '1');
 
-/* document.getElementById("myDropdown").classList.toggle("show"); */
+  document.getElementById('input').value = 'Gênesis';
+  document.getElementById('input1').value = '1';
+  document.getElementById('input2').value = '1';
 
   
+  document.getElementById('envia').click();
+
+
+}); 
+
 $('.btnTestamento').on('click', function(){
   if($(this).hasClass("active")){
 
@@ -16,6 +23,26 @@ $('.btnTestamento').on('click', function(){
   }
 })
 
+$('.botao').on('click', function(){
+  alert('ENtrou')
+  if($(this).hasClass("active")){
+
+  } else {
+    $('.list-group-item .active').removeClass("active")
+    $(this).addClass("active");
+  }
+  localStorage.removeItem("Livro");
+  localStorage.setItem('Livro', $(this).attr('value'))
+  valor = $(this).attr('value');
+  console.log('Livro selecionado: ' + valor)
+  document.getElementById('input').value = valor;
+  document.getElementById('input1').value = "1";
+  document.getElementById('input2').value = "1";
+  
+  document.getElementById('envia').click();
+
+})
+
 $('.divCapituloNumero').on('click', function(){
   if($(this).hasClass("active")){
 
@@ -23,6 +50,15 @@ $('.divCapituloNumero').on('click', function(){
     $('.divCapituloNumero.active').removeClass("active")
     $(this).addClass("active");
   }
+  localStorage.removeItem("Capítulo");
+  localStorage.setItem('Capítulo', $(this).attr('value'))
+  valor = $(this).attr('value');
+  console.log('Capítulo: ' + valor)
+  document.getElementById('input').value = localStorage.getItem('Livro');
+  document.getElementById('input1').value = valor;
+  document.getElementById('input2').value = "1";
+  
+  document.getElementById('envia').click();
 })
 
 $('.divVersiculo').on('click', function(){
@@ -68,44 +104,4 @@ $("#btnNovoTestamento").on('click', function(){
 
 
 
-$(document).ready(function () {
-  /* $.ajax({
-    url : "../../auxiliarBiblia.php",
-    type : 'post',
-    processData: false,
-    contentType: false,
-    data : "ola",
-    
-  })
-  .done(function(msg){
-    alert(msg)
-  
-  })
-  
-  .fail(function(jqXHR, textStatus, msg){
-    alert(msg)
-  }); */
 
-}); 
-
-/* $('.taga').on('click', function(){
-  nomeClicado = $(this).attr('value');
-  console.log(nomeClicado)
-  $.ajax({
-    url : "auxiliarBiblia.php",
-    type : 'POST',
-    data : {
-      "livro": nomeClicado
-    }
-    
-  })
-  .done(function(msg){
-    alert(msg)
-    location.href="http://localhost/construcaopuratemplates/auxiliarBiblia.php"
-  
-  })
-  
-  .fail(function(jqXHR, textStatus, msg){
-    alert(msg)
-  });
-}) */

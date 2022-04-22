@@ -6,6 +6,16 @@ html, body {
   background-color: white;
 }
 
+strong {
+  font-weight: bolder;
+}
+
+
+
+iframe {
+  display: none !important;
+}
+
 .divisor {height: 20px; }
 
 .sidebar.semmenu {
@@ -17,26 +27,63 @@ html, body {
   flex-direction: row !important;
   width: 100%;
   height: auto;
+  margin-top: 2%;
 }
 
 .sidebar {
-  width: 350px;
+  width: 100%;
   height: 100%;
   position: relative;
   color: black;
   padding: 10px;
 }
 
+.iconBar.puxado {
+  display: none;
+}
+
+/*511px*/
+
+
+@media (max-width: 511px){
+  .mainIUper.roww {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100%;
+    height: auto;
+  }
+} 
+
+
+
+
+#titlesidebar {
+  color: black;
+  font-weight: bolder;
+  margin: 0%;
+  padding: 0%;
+}
+
+#descSidbar {font-weight: lighter;}
+
 .sidebar .container.menu > p {
   font-weight: bolder;
+}
+
+.mainIUper .sidebar.container.menu .m-0 #myAccordion .accordion-item, 
+#collapseOne, #collapseTwo, #collapseThree, #itembgacord {
+  background-color: transparent !important;
+}
+
+.mainIUper .sidebar.container.menu .m-0 .accordion {
+  background-color: red;
 }
 
 .sidebar .menu {
   height: 100%;
   width: 100%;
   /* background-color: rgb(214, 210, 210); */
-  background-color: white;
-  padding-top: 10%;
+  padding-top: 2%;
 }
 
 .sidebar .container.menu .row{width: 100%;}
@@ -83,9 +130,19 @@ html, body {
   background-color: rgb(192, 0, 0) !important;
 
 }
-.sidebar .container.menu .list-group > li:hover {
-  background-color: white !important;
+.sidebar .container.menu .list-group .livroselecionadoA {
+  text-decoration: none;
   color: black;
+  font-weight: bold;
+}
+
+.sidebar .container.menu .list-group > li:hover {
+  background-color: rgb(192, 0, 0) !important;
+  color: white;
+}
+
+.sidebar .container.menu .list-group .active:hover {
+  background-color: white !important;
 }
 
 .sidebar .container.menu .tabela .row .divCapituloNumero {
@@ -133,10 +190,13 @@ html, body {
 }
 
 .sidebar .container.menu .tabela .row .divVersiculo > p {
- margin: 0%;
+  margin: 0%;
   padding: 0%;
   width: auto !important;
 }
+
+/* .main .container  {
+} */
 
 .main.commenu {
   background-color: white;
@@ -144,15 +204,31 @@ html, body {
   height: 100%;
 }
 
-.main .recuamenu .row .coluna > i {
+#iconbarchild {
   color: black;
-  font-size: 3vmax;
+  cursor: pointer;
+}
+#iconbarchild:hover {
+  color: rgb(192, 0, 0);
   cursor: pointer;
 }
 
-.main .recuamenu .row .coluna > i:hover {
+#bars {
+  color: black;
+  cursor: pointer;
+}
+
+#bars:hover {
   color: rgb(192, 0, 0);
-  font-size: 3vmax;
+  cursor: pointer;
+}
+.iconBar {
+  color: black;
+  cursor: pointer;
+}
+
+.iconBar:hover {
+  color: rgb(192, 0, 0);
   cursor: pointer;
 }
 
@@ -169,8 +245,26 @@ html, body {
   font-weight: bolder;
 }
 
+.main .bodyMain .versiculos .Verso.active {
+  background-color: rgb(190, 184, 177);
+  border-radius: 5px;
+}
+
+#titleLivro {
+  font-weight: bold;
+  color: black;
+  padding: 0%;
+  margin: 0%;
+}
+
+#numCapitulo { 
+  font-weight: bold;
+  color: black;
+}
+
 .main .bodyMain .versiculos > p {
-  font-size: 2vw;
+  font-size: 3vh;
+  word-wrap: break-word;
 }
 
 .main .bodyMain .controladores {margin-bottom: 10%; margin-top: 5%;}
@@ -185,7 +279,70 @@ html, body {
 
 }
 
-footer {
+/* footer {
   padding: 20px;
   text-align: center;
+  background-image: url('../img/bg3.jpg');
+  background-position: center;
+} */
+
+footer {
+  text-align: center;
+  padding:40px 0;
+  background-color:#ffffff;
+  color:#4b4c4d;
+}
+
+.footer-basic ul {
+  padding:0;
+  list-style:none;
+  text-align:center;
+  font-size:18px;
+  line-height:1.6;
+  margin-bottom:0;
+}
+
+.footer-basic li {
+  padding:0 10px;
+}
+
+.footer-basic ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity:1;
+}
+
+.footer-basic .social {
+  text-align:center;
+  padding-bottom:25px;
+}
+
+.footer-basic .social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin:0 8px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.footer-basic .social > a:hover {
+  opacity:0.9;
+}
+
+.footer-basic .copyright {
+  margin-top:15px;
+  text-align:center;
+  font-size:13px;
+  color:#aaa;
+  margin-bottom:0;
 }
