@@ -16,18 +16,23 @@ function valor_cookie(cname) {
 // Parâmetro 2 é o valor do cookie
 function cria_cookie(nome, valor) {
   // Cria uma data 01/01/2020
-  var data = new Date(2099,0,01);
+  //var data = new Date(2099,0,01);
   // Converte a data para GMT
-  data = data.toGMTString();
+  //data = data.toGMTString();
   // Codifica o valor do cookie para evitar problemas
   //valor = encodeURI(valor);
   // Cria o novo cookie
-  document.cookie = nome + '=' + valor + '; expires=' + data + ';';
+  document.cookie = nome + '=' + valor + ';'
 }
+
 
 $(document).ready(function () {
   if(valor_cookie('Livro') === ""){
     cria_cookie('Livro', 'Gênesis')
+  } else {
+    cria_cookie('Livro', decodeURIComponent(valor_cookie('Livro')))
+
+
   }
 
   if(valor_cookie('Capítulo') === ""){
@@ -36,18 +41,6 @@ $(document).ready(function () {
 
   if(valor_cookie('Versiculo') === ""){
     cria_cookie('Versiculo', '1')
-  }
-  existe_cookie = valor_cookie('reload');
-  if(existe_cookie != ""){
-    if(existe_cookie === 'faça'){
-      let livro = valor_cookie('Livro');
-      let cap = valor_cookie('Capítulo');
-      document.getElementById('input').value = livro;
-      document.getElementById('input1').value = cap;
-      document.getElementById('input2').value = "1";
-      document.getElementById('envia').click();
-      cria_cookie('reload', 'Feito')
-    }
   }
 }); 
 
@@ -69,23 +62,12 @@ $('.livroselecionadoA').on('click', function(){
     $(this).addClass("active");
   }
   cria_cookie('Livro', $(this).attr('value'))
-  valor = $(this).attr('value');
-  document.getElementById('input').value = valor;
-  document.getElementById('input1').value = "1";
-  document.getElementById('input2').value = "1";
-  
   document.getElementById('envia').click();
 
 })
 
 $('.list-group-item').on('click', function(){
-  
   cria_cookie('Livro', $(this).children().attr('value'))
-  valor = $(this).children().attr('value')
-  document.getElementById('input').value = valor;
-  document.getElementById('input1').value = "1";
-  document.getElementById('input2').value = "1";
-  
   document.getElementById('envia').click();
 
 })
@@ -98,11 +80,6 @@ $('.divCapituloNumero').on('click', function(){
     $(this).addClass("active");
   }
   cria_cookie('Capítulo', $(this).attr('value'))
-  valor = $(this).attr('value');
-  document.getElementById('input').value = valor_cookie('Livro');
-  document.getElementById('input1').value = valor;
-  document.getElementById('input2').value = "1";
-  
   document.getElementById('envia').click();
 })
 
@@ -118,11 +95,6 @@ $('.divVersiculo').on('click', function(){
   window.location.href='#Verso' + $(this).attr('value');
 
   cria_cookie('Versiculo', $(this).attr('value'))
-  valor = $(this).attr('value');
-  document.getElementById('input').value = valor_cookie('Livro');
-  document.getElementById('input1').value = valor_cookie('Capítulo');
-  document.getElementById('input2').value = valor;
-  
   document.getElementById('envia').click();
   
 })
@@ -189,30 +161,14 @@ $("#btnNovoTestamento").on('click', function(){
 })
   
 $('.btnCapituloAnterior').on('click', function(){
-    // Pega os dois dados essencias do localStorage
+    // Pega os dois dados essencias do cookies
     capituloatual = valor_cookie('Capítulo')
     livroatual = valor_cookie('Livro')
     canSend = false;
 
-    // Essa solicitação GET vai pedir ao modulo a quantidade de capitulos que o
-    // livro atual tem
-    $.ajax({
-        method: "GET",
-        url: "assets/modules/modulo.php",
-        data: { nome: livroatual, modulo: "ConsultaCapitulos"}
-    }).done(function( msg ) {
-        // Se a solicitação for sucedida, define no localstorage a 
-        // quantidade de capítylos do livro atual
-        cria_cookie('totalcap', msg)
-    }).fail(function(msg){
-        // Se a solicitacao for falhada, define no localstorage 
-        // a quantidade de capitulos do livro atual como 1
-        cria_cookie('totalcap', 1)
-    })
 
-    // Pega o número de capitulos do livro atual do LocalStorage
-    numcapitulos = valor_cookie('totalcap')
-
+    // Pega o número de capitulos do livro atual do cookies
+    numcapitulos = valor_cookie('totalcapitulos')
 
     // Verifica se o capitulo atual é o ultimo capitulo do livro atual
     // Caso seja, faz com que o livro seja mudado
@@ -221,151 +177,61 @@ $('.btnCapituloAnterior').on('click', function(){
         if(livroatual === "Gênesis"){
             Swal.fire('Não é possível retroceder pois Gênesis é o primeiro livro da bíblia!')
         } else {
-            // Essa solicitação GET vai pedir ao módulo qual o livro que sucede o livro atual
-            $.ajax({
-                method: "GET",
-                url: "assets/modules/modulo.php",
-                data: { nome: livroatual, tipo: "antes", modulo: "ConsultaLivro"}
-
-            }).done(function( msg ) {
-                // se for sucedido define os input do post com o livro novo
-                document.getElementById('input').value = msg;
-                document.getElementById('input1').value = "1";
-                document.getElementById('input2').value = "1";
-
-                // Atualiza os dados no localstorage
-                cria_cookie('Livro', msg)
-                cria_cookie('Capítulo', '1')
-                cria_cookie('Versiculo', '1')
-
-                canSend = true;
-
-            }) .fail(function(msg){
-                // se falhar, define alguns dados padrões
-                document.getElementById('input').value = livroatual;
-                document.getElementById('input1').value = capituloatual;
-                document.getElementById('input2').value = "1";
-
-                // Atualiza os dados no localstorage
-                cria_cookie('Livro', livroatual)
-                cria_cookie('Capítulo', capituloatual)
-                cria_cookie('Versiculo', '1')
-
-                canSend = true;
-            })
+              // Atualiza os dados no cookies
+              cria_cookie('anterior', 'mudalivro')
+              canSend = true;
         }
     } else {
         // Caso o capítulo atual não seja o último capítulo do livro atual
         // troca-se o capitulo sucendedo-o normalmente
-        document.getElementById('input').value = livroatual;
-        document.getElementById('input1').value = parseInt(capituloatual) - 1;
-        document.getElementById('input2').value = "1";
+        cria_cookie("capnovo", parseInt(capituloatual) - 1);
 
-        // Atualiza os dados no localstorage
-        cria_cookie('Livro', livroatual)
-        cria_cookie('Capítulo', parseInt(capituloatual) - 1)
-        cria_cookie('Versiculo', '1')
+        // Atualiza os dados no cookies
+        cria_cookie('anterior', "socapitulo")
 
         canSend = true;
     }
 
-    
-
-
-    cria_cookie('reload', 'faça')
+    //cria_cookie('reload', 'faça')
     // Faz o post dos dados
     if(canSend){document.getElementById('envia').click()}
     
 })
 
 $('.btnCapituloSucessor').on('click', function(){
-    // Pega os dois dados essencias do localStorage
-    capituloatual = valor_cookie('Capítulo')
-    livroatual = valor_cookie('Livro')
-    canSend = false;
-
-    // Essa solicitação GET vai pedir ao modulo a quantidade de capitulos que o
-    // livro atual tem
-    $.ajax({
-        method: "GET",
-        url: "assets/modules/modulo.php",
-        data: { nome: livroatual, modulo: "ConsultaCapitulos"}
-    }).done(function( msg ) {
-        // Se a solicitação for sucedida, define no localstorage a 
-        // quantidade de capítylos do livro atual
-        cria_cookie('totalcap', msg)
-    }).fail(function(msg){
-        // Se a solicitacao for falhada, define no localstorage 
-        // a quantidade de capitulos do livro atual como 1
-        cria_cookie('totalcap', 1)
-    })
-
-    // Pega o número de capitulos do livro atual do LocalStorage
-    numcapitulos = valor_cookie('totalcap')
+  // Pega os dois dados essencias do cookies
+  capituloatual = valor_cookie('Capítulo')
+  livroatual = valor_cookie('Livro')
+  canSend = false;
 
 
-    // Verifica se o capitulo atual é o ultimo capitulo do livro atual
-    // Caso seja, faz com que o livro seja mudado
-    if(parseInt(capituloatual) === parseInt(numcapitulos)){
-        // Verifica se o livro atual é o último da biblia
-        if(livroatual === "Apocalipse"){
-            Swal.fire('Não é possível avançar pois Apocalipse é o último livro da bíblia!')
-        } else {
-            // Essa solicitação GET vai pedir ao módulo qual o livro que sucede o livro atual
-            $.ajax({
-                method: "GET",
-                url: "assets/modules/modulo.php",
-                data: { nome: livroatual, tipo: "apos", modulo: "ConsultaLivro"}
+  // Pega o número de capitulos do livro atual do cookies
+  numcapitulos = valor_cookie('totalcapitulos')
 
-            }).done(function( msg ) {
-                // se for sucedido define os input do post com o livro novo
-                document.getElementById('input').value = msg;
-                document.getElementById('input1').value = "1";
-                document.getElementById('input2').value = "1";
+  // Verifica se o capitulo atual é o ultimo capitulo do livro atual
+  // Caso seja, faz com que o livro seja mudado
+  if(parseInt(capituloatual) === parseInt(valor_cookie('totalcapitulos'))){
+      // Verifica se o livro atual é o último da biblia
+      if(livroatual === "Apocalipse"){
+        Swal.fire('Não é possível avançar pois Apocalipse é o último livro da bíblia!')
+      } else {
+            // Atualiza os dados no cookies
+            cria_cookie('proximo', 'mudalivro')
+            canSend = true;
+      }
+  } else {
+      // Caso o capítulo atual não seja o último capítulo do livro atual
+      // troca-se o capitulo sucendedo-o normalmente
+      cria_cookie("capnovo", parseInt(capituloatual) + 1);
 
-                // Atualiza os dados no localstorage
-                cria_cookie('Livro', msg)
-                cria_cookie('Capítulo', '1')
-                cria_cookie('Versiculo', '1')
+      // Atualiza os dados no cookies
+      cria_cookie('anterior', "socapitulo")
 
-                canSend = true;
+      canSend = true;
+  }
 
-            }) .fail(function(msg){
-                // se falhar, define alguns dados padrões
-                document.getElementById('input').value = livroatual;
-                document.getElementById('input1').value = capituloatual;
-                document.getElementById('input2').value = "1";
-
-                // Atualiza os dados no localstorage
-                cria_cookie('Livro', livroatual)
-                cria_cookie('Capítulo', capituloatual)
-                cria_cookie('Versiculo', '1')
-
-                canSend = true;
-            })
-        }
-    } else {
-        // Caso o capítulo atual não seja o último capítulo do livro atual
-        // troca-se o capitulo sucendedo-o normalmente
-        document.getElementById('input').value = livroatual;
-        document.getElementById('input1').value = parseInt(capituloatual) + 1;
-        document.getElementById('input2').value = "1";
-
-        // Atualiza os dados no localstorage
-        cria_cookie('Livro', livroatual)
-        cria_cookie('Capítulo', parseInt(capituloatual) + 1)
-        cria_cookie('Versiculo', '1')
-
-        canSend = true;
-    }
-
-    
-
-
-    cria_cookie('reload', 'faça')
-    // Faz o post dos dados
-    if(canSend){document.getElementById('envia').click()}
-    
+  //cria_cookie('reload', 'faça')
+  // Faz o post dos dados
+  if(canSend){document.getElementById('envia').click()}
+  
 })
-
-

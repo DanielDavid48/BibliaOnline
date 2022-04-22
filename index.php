@@ -1,17 +1,19 @@
 
 <?php
-    if(!empty($_POST['livroselecionado'])){
-        $LivroSelecionado = $_POST['livroselecionado'];
+    header('Content-Type: text/html; charset=utf-8');
+
+    if(!empty($_COOKIE['Livro'])){
+        $LivroSelecionado = $_COOKIE['Livro'];
     } else {
         $LivroSelecionado = "Gênesis";
     }
-    if(!empty($_POST['capituloselecionado'])){
-        $capituloSelecionado = $_POST['capituloselecionado'];
+    if(!empty($_COOKIE['Capítulo'])){
+        $capituloSelecionado = $_COOKIE['Capítulo'];
     } else {
         $capituloSelecionado = "1";
     }
-    if(!empty($_POST['versiculoselecionado'])){
-        $versiculoselecionado = $_POST['versiculoselecionado'];
+    if(!empty($_COOKIE['Versiculo'])){
+        $versiculoselecionado = $_COOKIE['Versiculo'];
     } else {
         $versiculoselecionado = "1";
     }
@@ -22,6 +24,46 @@
     // Decode the JSON file
     $json_data = json_decode($json,true);
 
+    
+    
+    if(!empty($_COOKIE['anterior'])){
+        if($_COOKIE['anterior'] === "socapitulo"){
+            $capituloSelecionado = $_COOKIE['capnovo'];
+            setcookie('Capítulo', $capituloSelecionado);
+        } else if($_COOKIE['anterior'] === "mudalivro"){
+            for($indice = 0; $indice < count($json_data); $indice++){
+                if($json_data[$indice]['nome'] == $_COOKIE['Livro']){
+                    $LivroSelecionado = $json_data[$indice - 1]["nome"];
+                    $capituloSelecionado = "1";
+                    $versiculoselecionado = "1";
+                    break;
+                }
+            }
+        }
+        setcookie('Livro', $LivroSelecionado);
+        setcookie('Capítulo', $capituloSelecionado);
+        setcookie('anterior', '', time()-3600);
+    }
+    if(!empty($_COOKIE['proximo'])){
+        if($_COOKIE['proximo'] === "socapitulo"){
+            $capituloSelecionado = $_COOKIE['capnovo'];
+            setcookie('Capítulo', $capituloSelecionado);
+        } else if($_COOKIE['proximo'] === "mudalivro"){
+            for($indice = 0; $indice < count($json_data); $indice++){
+
+                if($json_data[$indice]['nome'] == $_COOKIE['Livro']){
+                    $LivroSelecionado = $json_data[$indice + 1]["nome"];
+                    $capituloSelecionado = "1";
+                    $versiculoselecionado = "1";
+                    break;
+                }
+            }
+        }
+        setcookie('Livro', $LivroSelecionado);
+        setcookie('Capítulo', $capituloSelecionado);
+        setcookie('proximo', '', time()-3600);
+    }
+
     // carregar a quantidade de capitulos
     for($indice = 0; $indice < count($json_data); $indice++){
         if($json_data[$indice]['nome'] == $LivroSelecionado){
@@ -29,9 +71,13 @@
             break;
         }
     }
+
     $xml = simplexml_load_file('assets/livros/'.$caminho.'');
     
     $totalCapitulos = $xml -> attributes()-> chapters;
+    //echo 'Total de capitulos: '.$totalCapitulos.' | caminho: assets/livros/'.$caminho.' | Livro selecionado: '.$LivroSelecionado.'';
+    setcookie('totalcapitulos', $totalCapitulos);
+
 
  
 
@@ -52,11 +98,7 @@
 </head>
 <body>
     <form action="" method="POST">
-        <input type="text" name="livroselecionado" id="input" style="display: none">
-        <input type="text" name="capituloselecionado" id="input1" style="display: none">
-        <input type="text" name="versiculoselecionado" id="input2"  style="display: none">
         <button type="submit" name="envia" id="envia" value="Nada" style="display: none"></button>
-
     </form>
     <div class="mainIUper roww">
         <div class="sidebar semmenu">
