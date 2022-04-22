@@ -40,7 +40,7 @@
                 }
             }
         }
-        setcookie('Livro', $LivroSelecionado);
+        setrawcookie('Livro', $LivroSelecionado);
         setcookie('Capítulo', $capituloSelecionado);
         setcookie('anterior', '', time()-3600);
     }
@@ -59,7 +59,7 @@
                 }
             }
         }
-        setcookie('Livro', $LivroSelecionado);
+        setrawcookie('Livro', $LivroSelecionado);
         setcookie('Capítulo', $capituloSelecionado);
         setcookie('proximo', '', time()-3600);
     }
@@ -78,8 +78,6 @@
     //echo 'Total de capitulos: '.$totalCapitulos.' | caminho: assets/livros/'.$caminho.' | Livro selecionado: '.$LivroSelecionado.'';
     setcookie('totalcapitulos', $totalCapitulos);
 
-
- 
 
 
 ?>

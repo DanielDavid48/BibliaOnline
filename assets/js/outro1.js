@@ -29,11 +29,7 @@ function cria_cookie(nome, valor) {
 $(document).ready(function () {
   if(valor_cookie('Livro') === ""){
     cria_cookie('Livro', 'Gênesis')
-  } else {
-    cria_cookie('Livro', decodeURIComponent(valor_cookie('Livro')))
-
-
-  }
+  } 
 
   if(valor_cookie('Capítulo') === ""){
     cria_cookie('Capítulo', '1')
