@@ -1,4 +1,4 @@
-# BibliaOnline
+# Biblia Online
 Esse projeto foi idealizado para passar tempo. Por isso, não está totalmente perfeito!
 
 # Visualização
