@@ -232,6 +232,11 @@ iframe {
   cursor: pointer;
 }
 
+.iconbarchild.off {
+  display: none;
+}
+
+
 .main.semmenu {
   width: 100%;
 }

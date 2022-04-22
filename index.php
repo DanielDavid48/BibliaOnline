@@ -240,7 +240,7 @@
                 <div class="recuamenu">
                     <div class="row">
                         <div class="col-6 coluna">
-                            <h3 id="iconbarchild"><i class="fa fa-bars" id="bars"></i></h3>
+                            <h3 id="iconbarchild" class="iconbarchild"><i class="fa fa-bars" id="bars"></i></h3>
                         </div>
                         <div class="col-6 coluna">
                             <img src="assets/img/cross.png" height="30px" width="30px" alt="">

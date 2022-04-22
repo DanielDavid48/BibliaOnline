@@ -3,8 +3,8 @@ Esse projeto foi idealizado para passar tempo. Por isso, não está totalmente p
 
 # Visualização
 Você pode baixar e colocar o projeto numa rede local com o xamp ou pode visualizá-lo acessando o link a seguir:
-*O link da demo está em manutenção, portanto não está funcionando a visualização ao vivo no momento!*
--> https://bibliaonlinedanielgroup.000webhostapp.com/
+
+-> http://bottelegramapp.epizy.com/
 
 # Adendos
 - Algumas partes do assets/js/outro.js estão mal otimizadas porém funcional. 

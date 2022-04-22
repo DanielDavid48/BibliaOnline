@@ -58,12 +58,17 @@ $('.livroselecionadoA').on('click', function(){
     $(this).addClass("active");
   }
   cria_cookie('Livro', $(this).attr('value'))
+  cria_cookie('Capítulo', '1')
+  cria_cookie('Versiculo', '1')
+
   document.getElementById('envia').click();
 
 })
 
 $('.list-group-item').on('click', function(){
   cria_cookie('Livro', $(this).children().attr('value'))
+  cria_cookie('Capítulo', '1')
+  cria_cookie('Versiculo', '1')
   document.getElementById('envia').click();
 
 })
@@ -76,6 +81,8 @@ $('.divCapituloNumero').on('click', function(){
     $(this).addClass("active");
   }
   cria_cookie('Capítulo', $(this).attr('value'))
+  cria_cookie('Versiculo', '1')
+
   document.getElementById('envia').click();
 })
 
@@ -102,7 +109,10 @@ $('#bars').on('click', function(){
       $('#bars2').removeClass('puxado')
       $('#bars2').removeClass('fa-bars')
       $('#bars2').addClass('fa-times')
+      $('#iconbarchild').addClass("off");
+
   } else {
+     $('#iconbarchild').removeClass("off");
       $('#bars2').addClass('puxado')
   }
 
@@ -119,19 +129,23 @@ $('#bars').on('click', function(){
     $(".main semmenu").removeClass("semmenu");
     $(".main").addClass("commenu");
     $('.sidebar').removeClass("semmenu");
+    
   }
 })
 
 $('#bars2').on('click', function(){
-  
   if($(this).hasClass("fa-times")){
     $(this).removeClass("fa-times");
     $(this).addClass("fa-bars");
-    $('#bars').removeClass('fa-times')
-    $('#bars').addClass('fa-bars')
     $(".main commenu").removeClass("commenu");
     $(".main commenu").addClass("semmenu");
     $('.sidebar').addClass("semmenu");
+    $('#iconbarchild').removeClass("off");
+    $('#bars').removeClass("fa-times");
+    $('#bars').addClass("fa-bars");
+
+
+
 
   } else {
     $(this).removeClass("fa-bars");
@@ -139,6 +153,7 @@ $('#bars2').on('click', function(){
     $(".main semmenu").removeClass("semmenu");
     $(".main").addClass("commenu");
     $('.sidebar').removeClass("semmenu");
+
   }
 })
 
