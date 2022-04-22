@@ -174,7 +174,7 @@ $('.btnCapituloAnterior').on('click', function(){
     // livro atual tem
     $.ajax({
         method: "GET",
-        url: "modulo.php",
+        url: "assets/modules/modulo.php",
         data: { nome: livroatual, modulo: "ConsultaCapitulos"}
     }).done(function( msg ) {
         // Se a solicitação for sucedida, define no localstorage a 
@@ -200,7 +200,7 @@ $('.btnCapituloAnterior').on('click', function(){
             // Essa solicitação GET vai pedir ao módulo qual o livro que sucede o livro atual
             $.ajax({
                 method: "GET",
-                url: "modulo.php",
+                url: "assets/modules/modulo.php",
                 data: { nome: livroatual, tipo: "antes", modulo: "ConsultaLivro"}
 
             }).done(function( msg ) {
@@ -264,7 +264,7 @@ $('.btnCapituloSucessor').on('click', function(){
     // livro atual tem
     $.ajax({
         method: "GET",
-        url: "modulo.php",
+        url: "assets/modules/modulo.php",
         data: { nome: livroatual, modulo: "ConsultaCapitulos"}
     }).done(function( msg ) {
         // Se a solicitação for sucedida, define no localstorage a 
@@ -290,7 +290,7 @@ $('.btnCapituloSucessor').on('click', function(){
             // Essa solicitação GET vai pedir ao módulo qual o livro que sucede o livro atual
             $.ajax({
                 method: "GET",
-                url: "modulo.php",
+                url: "assets/modules/modulo.php",
                 data: { nome: livroatual, tipo: "apos", modulo: "ConsultaLivro"}
 
             }).done(function( msg ) {

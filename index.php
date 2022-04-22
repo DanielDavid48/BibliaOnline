@@ -1,21 +1,17 @@
 
 <?php
-    session_start();
     if(!empty($_POST['livroselecionado'])){
         $LivroSelecionado = $_POST['livroselecionado'];
-        $_SESSION['livro'] = $LivroSelecionado;
     } else {
         $LivroSelecionado = "Gênesis";
     }
     if(!empty($_POST['capituloselecionado'])){
         $capituloSelecionado = $_POST['capituloselecionado'];
-        $_SESSION['capitulo'] = $capituloSelecionado;
     } else {
         $capituloSelecionado = "1";
     }
     if(!empty($_POST['versiculoselecionado'])){
         $versiculoselecionado = $_POST['versiculoselecionado'];
-        $_SESSION['versiculo'] = $versiculoselecionado;
     } else {
         $versiculoselecionado = "1";
     }
@@ -33,7 +29,6 @@
             break;
         }
     }
-
     $xml = simplexml_load_file('assets/livros/'.$caminho.'');
     
     $totalCapitulos = $xml -> attributes()-> chapters;
