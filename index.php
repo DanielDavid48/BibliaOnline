@@ -144,7 +144,7 @@
                                         };
                                     ?>
                                 </ul>
-                                <ul class="list-group list-group-flush listaNovoTestamento si">
+                                <ul class="list-group list-group-flush listaNovoTestamento no">
                                     <?php
                                         // Itera o json
                                         for ($i = 0; $i < count($json_data); $i++){
