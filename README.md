@@ -4,7 +4,7 @@ Esse projeto foi idealizado para passar tempo. Por isso, não está totalmente p
 # Visualização
 Você pode baixar e colocar o projeto numa rede local com o xamp ou pode visualizá-lo acessando o link a seguir:
 
--> http://bottelegramapp.epizy.com/
+-> http://bibliaonlinev2.rf.gd/
 
 # Adendos
 
